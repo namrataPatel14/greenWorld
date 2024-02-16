@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { useFonts } from 'expo-font';
+import { Provider } from 'react-redux';
+import appStore from './src/appStore';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import RouteScreen from './src/routes/routes';
+import persistStore from 'redux-persist/es/persistStore';
+import { PersistGate } from 'redux-persist/integration/react';
+
+let persistor = persistStore(appStore);
+
+const App = () =>{
+  const [fontsLoaded] = useFonts({
+    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+    'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
+    'Raleway-Light': require('./assets/fonts/Raleway-Light.ttf'),
+    'Raleway-Medium': require('./assets/fonts/Raleway-Medium.ttf'),
+    'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
+  });
+  if (!fontsLoaded) {
+    return null;
+  }
+  return(
+   <Provider store={appStore}>
+      <PersistGate persistor={persistor}>
+        <RouteScreen />
+      </PersistGate>
+    </Provider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

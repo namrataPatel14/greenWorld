@@ -6,7 +6,7 @@ const CartScreen = () => {
 
    return(
     <View style={{display:'flex' , justifyContent:'center' , alignItems:'center', borderWidth:1, height:'100%' , width:'100%'}}>
-        <Text style={{fontSize:30}}>Profile</Text>
+        <Text style={{fontSize:30}}>Cart</Text>
     </View>
    )
 }

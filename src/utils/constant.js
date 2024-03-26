@@ -6,14 +6,17 @@ const fontScale = PixelRatio.getFontScale();
 export const { width, height } = Dimensions.get('window');
 export const appStyles = {
     color:{
-        GREEN:"#2d9700",
+        // GREEN:"#2d9700",
+        GREEN:'#2c5123',
+        LIGHT_GREEN:'#709767',
         WHITE:'#FFF',
-        GREY:'#CCC',
+        WHITE_ONE:"#F1F1F1",
+        GREY:'#ABABA7',
         LIGHT_GREY:'#edecec',
-        DARK_GREY1:'#8d8c8c',
+        DARK_GREY1:'#263238',
         DARK_GREY:"#A9A9A9",
         BLACK:'#000',
-        HEADING:'#444',
+        HEADING:'#263238',
         ERROR:'red'
     },
     fonts:{
@@ -32,9 +35,10 @@ export const appStyles = {
     robotoBold:'Roboto-Bold',
     ralewayLight:'Raleway-Light',
     ralewayMedium:'Raleway-Medium',
-    ralewayRegular:'Raleway-Regular'
+    ralewayRegular:'Raleway-Regular',
+
    }
 }
-export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://192.168.2.20:8080' : " ";
+export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://192.168.2.13:8080' : " ";
 export const USER_URL = 'api/users';
 

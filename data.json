@@ -1,0 +1,55 @@
+[{
+    "name":"Bonsai Tree",
+    "image":"https://i.postimg.cc/8zznHjKg/bonsaitree.webp",
+    "description":
+      "These awesome trees have been grown in the form of Bonsai's making them the perfect indoor tree without taking up a lot of space.Ideal for smaller homes or office spaces looking for something outstanding to create a presence, especially if used as a tabletop focal piece. Alternatively, they look fantastic as part of a floor level plant display, adding that mid-level height for contrast.",
+    "category": "Indoor",
+    "price": 50,
+    "countInStock": 10
+  },
+  {
+    "name": "Money Plant",
+    "image": "https://i.postimg.cc/CxCLjrQQ/moneyplant.webp",
+    "description":
+      "These peculiar looking green plants have caught the imagination of indoor plant lovers the world around.No plant collection is complete without one.",
+    "category": "Indoor",
+    "price": 55,
+    "countInStock": 7
+  },
+  {
+    "name": "Snake Plant",
+    "image": "https://i.postimg.cc/3wp6yzfk/snakeplant.webp",
+    "description":
+      "Snake Plant is one of the most carefree house plants you can grow. It thrives in just about any light, prefers dry air and soil and rarely needing to be repotted.",
+    "category": "Indoor",
+    "price": 30,
+    "countInStock": 5
+  },
+  {
+    "name": "Caladium Plant",
+    "image": "https://i.postimg.cc/qR1N2DzT/caladiumplant.webp",
+    "description":
+      "The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music",
+    "category": "Outdoor",
+    "price": 18,
+    "countInStock": 11
+
+  },
+  {
+    "name": "Peppermint Herb Plant",
+    "image":"https://i.postimg.cc/JnHhB7Vb/mint.jpg",
+    "description":
+      "Peppermint is the perfect herb for the gardener who likes to entertain. Easy to grow and harvest, this classic herb is perfect for adding a hint of mint to beverages and desserts. Peppermint perfumes the garden with a refreshing aroma and performs well in containers.",
+    "category": "Gardening",
+    "price": 12,
+    "countInStock": 7
+  },
+  {
+    "name": "Basil Plant",
+    "image": "https://i.postimg.cc/bJ7KVpGH/basilplant.avif",
+    "description":
+      "Famous for its signature flavor and fragrance, Sweet Basil has big green leaves that are just what you need to make classic pesto. Plants grow fast and are easy to care for. Harvest often to promote bushiness and plant growth and be sure to pinch blooms as soon as you see them to keep the plant from going to seed. Plant Sweet Basil after the last spring frost. Grows well in containers as long as it's watered regularly.",
+    "category": "Gardening",
+    "price": 10,
+    "countInStock": 0
+  }]

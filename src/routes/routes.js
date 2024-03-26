@@ -8,6 +8,8 @@ import HomeScreen from "../screens/Home/homeScreen";
 import ProfileScreen from "../screens/Profile/profileScreen";
 import CartScreen from "../screens/Cart/cartScreen";
 import { Ionicons } from "@expo/vector-icons";
+import productScreen from "../screens/Product/productScreen";
+import ProductScreen from "../screens/Product/productScreen";
 
 const Tab = createBottomTabNavigator();
 const stack = createNativeStackNavigator();
@@ -26,12 +28,18 @@ const TabNavigator = () =>{
         } else if(route.name == "Profile"){
           iconName = focused ? 'person' : 'person-outline';
         }
-        return <Ionicons name={iconName} size={28} color={color} />;
+        else if(route.name == "Favourite"){
+          iconName = focused ? 'heart' : 'heart-outline';
+        }
+        
+        return <Ionicons name={iconName} size={22} color={color} />;
       },
-      tabBarActiveTintColor: '#2d9700',
-      tabBarInactiveTintColor: '#A9A9A9',
+      tabBarActiveTintColor: '#2c5123',
+      tabBarInactiveTintColor: '#ABABA7',
     })}>
-      <Tab.Screen name="Home" component={HomeScreen}/>
+      
+      <Tab.Screen name="Home" component={HomeScreen}/> 
+      <Tab.Screen name="Favourite" component={CartScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
@@ -48,6 +56,10 @@ const RouteScreen = () => {
           <stack.Screen
             name="Signup"
             component={SignupScreen}
+          />
+          <stack.Screen
+            name="Product"
+            component={ProductScreen}
           />
           <stack.Screen
             name="TabNavigator"

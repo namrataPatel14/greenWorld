@@ -39,6 +39,6 @@ export const appStyles = {
 
    }
 }
-export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://192.168.2.13:8080' : " ";
+export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://192.168.2.22:8080' : " ";
 export const USER_URL = 'api/users';
 

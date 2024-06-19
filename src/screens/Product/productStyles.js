@@ -11,7 +11,7 @@ const productStyles = StyleSheet.create({
   },
   productImg: {
     width: "100%",
-    height: width * 1,
+    height: width * 0.9,
   },
   productInfoBody: {
     paddingHorizontal: width * 0.05,

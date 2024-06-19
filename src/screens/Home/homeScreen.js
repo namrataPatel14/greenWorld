@@ -9,7 +9,7 @@ import {
   FlatList,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux";
 import homeStyles from "./homeStyles";
 import { Ionicons } from "@expo/vector-icons";
 import Carousel, { Pagination } from "react-native-snap-carousel";
@@ -39,8 +39,8 @@ const HomeScreen = () => {
   const [products, setProducts] = useState("");
   const navigation = useNavigation();
   const isCarousel = useRef(null);
-  const {userInfo} =  useSelector(state => state.user)
-  console.log(userInfo.name , "userInfo@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+  const { userInfo } = useSelector((state) => state.user);
+
   const getAllProducts = async () => {
     try {
       await axios.get(`${BASE_URL}/api/products`).then((response) => {
@@ -54,12 +54,12 @@ const HomeScreen = () => {
   useEffect(() => {
     getAllProducts();
   }, []);
- const navigateToCart = () =>{
-  navigation.navigate("Cart")
- }
- const navigateToProduct = () =>{
-  navigation.navigate("Product")
- }
+  const navigateToCart = () => {
+    navigation.navigate("Cart");
+  };
+  const navigateToProduct = (id) => {
+    navigation.navigate("Product", id);
+  };
   const CarouselCardItem = ({ item, index }) => {
     return (
       <View key={index} style={homeStyles.CarContainer}>
@@ -82,11 +82,10 @@ const HomeScreen = () => {
   };
 
   const renderItem = (item) => {
-    console.log(item.item, "renderItem *****");
     return (
       <View style={homeStyles.productCard}>
         <View>
-          <TouchableOpacity onPress={navigateToProduct}>
+          <TouchableOpacity onPress={() => navigateToProduct(item.item._id)}>
             <Image
               style={homeStyles.productImg}
               source={{
@@ -96,11 +95,11 @@ const HomeScreen = () => {
             />
           </TouchableOpacity>
         </View>
-        <View
-          style={homeStyles.productContainer}
-        >
+        <View style={homeStyles.productContainer}>
           <View style={homeStyles.productInfo}>
-            <Text style={homeStyles.productName} numberOfLines={1}>{item.item.name}</Text>
+            <Text style={homeStyles.productName} numberOfLines={1}>
+              {item.item.name}
+            </Text>
             <Text style={homeStyles.productCat}>{item.item.category}</Text>
             <Text style={homeStyles.productPrice}>${item.item.price}</Text>
           </View>
@@ -135,7 +134,10 @@ const HomeScreen = () => {
             </View>
           </View>
           <View style={homeStyles.rightHeader}>
-            <TouchableOpacity style={homeStyles.iconContainer} onPress={navigateToCart}>
+            <TouchableOpacity
+              style={homeStyles.iconContainer}
+              onPress={navigateToCart}
+            >
               <Ionicons name={"cart-outline"} size={20} color={"#263238"} />
             </TouchableOpacity>
           </View>
